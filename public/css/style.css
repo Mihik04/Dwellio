@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    flex: 1;
+    max-width: 1200px !important;
+    width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+/*NAVBAR*/
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color:#fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color:#222222 !important;
+}
+
+/*FOOTER*/
+.f-info-links a{
+   text-decoration: none;
+   color: #222222;
+}
+.f-info-links a:hover{
+   text-decoration: underline;
+}
+.f-info-links,.f-info-socials{
+    width: 100%;
+}
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem ;
+}
+footer{
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: calc(-50vw + 50%) !important;
+}
+.f-info{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Card*/
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{
+  font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/*New Page*/
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/*Edit Page*/
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+/*Show Page*/
+.show-img{
+    height: 40vh;
+}

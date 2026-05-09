@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate.ejs") %>
+   <div class="row mt-5">
+    <div class="col-8 offset-2">
+     
+    <h3>Edit your Listing</h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required>
+            <div class="valid-feedback">Great update — this title will turn heads!</div>
+            <div class="invalid-feedback">Give your place a name it deserves!</div>
+        </div>
+
+         <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+             <div class="valid-feedback">Great update — this title will turn heads!</div>
+            <div class="invalid-feedback">Give your place a name it deserves!</div>
+         </div>
+        
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Link</label>
+            <input name="listing[image]" value="<%= listing.image %>" type="text" class="form-control" required>
+             <div class="valid-feedback">Fresh look — great choice!</div>
+            <div class="invalid-feedback">Add a new photo to keep it fresh!</div>
+        </div> 
+        <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required>
+                         <div class="valid-feedback">Smart pricing — looking competitive!</div>
+                        <div class="invalid-feedback">Set a price that works for you and your guests!</div>     
+                    </div>
+                
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required>
+                         <div class="valid-feedback">Location locked in!</div>
+                        <div class="invalid-feedback">Double check the country name!</div>
+                    </div> 
+        </div>        
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required>
+             <div class="valid-feedback">Pinned perfectly!</div>
+            <div class="invalid-feedback">Make sure guests can find their way!</div>
+        </div>
+        
+             
+
+        <button class="btn btn-dark edit-btn mt-3 mb-5">Edit</button>                
+    </form>
+</div>
+</div>
