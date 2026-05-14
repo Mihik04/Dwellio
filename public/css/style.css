@@ -1,4 +1,5 @@
 body{
+    background-color: #FEFAE0;
     margin: 0;
     padding: 0;
     font-family: "Plus Jakarta Sans", sans-serif !important;
@@ -24,31 +25,36 @@ body{
 /*NAVBAR*/
 .navbar{
     height: 5rem;
-    background-color: white;
+    background-color: #0B3D2E !important;;
 }
 .fa-compass{
-    color:#fe424d;
+    color: #52B788;
     font-size: 2rem;
 }
 
 .nav-link{
-    color:#222222 !important;
+    color: #f0f0e8 !important;
+}
+.nav-link:hover {
+    color: #52B788 !important; /* bright green on hover */
 }
 
 /*FOOTER*/
 .f-info-links a{
-   text-decoration: none;
-   color: #222222;
+    text-decoration: none;
+    color: #B7E4C7;
 }
 .f-info-links a:hover{
-   text-decoration: underline;
+    text-decoration: underline;
+    color: white;
 }
 .f-info-links,.f-info-socials{
     width: 100%;
 }
 .f-info-socials i{
     font-size: 1.2rem;
-    margin-right: 1rem ;
+    margin-right: 1rem;
+    color: #B7E4C7;
 }
 footer{
     width: 100vw !important;
@@ -57,13 +63,15 @@ footer{
     margin-left: calc(-50vw + 50%) !important;
 }
 .f-info{
+    background-color: #0B3D2E;
+    color: #f0f0e8;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     text-align: center;
     display: flex;
     height: 8rem;
-    background-color: #ebebeb;
+    
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -100,14 +108,16 @@ footer{
 
 /*New Page*/
 .add-btn{
-    background-color: #fe424d !important;
+     background-color: #2D6A4F !important;
     border: none !important;
+    color: white !important;
 }
 
 /*Edit Page*/
 .edit-btn{
-    background-color: #fe424d !important;
+   background-color: #2D6A4F !important;
     border: none !important;
+    color: white !important;
 }
 /*Show Page*/
 .show-img{

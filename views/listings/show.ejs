@@ -6,7 +6,7 @@
            <h3 class="mb-3"><%= listing.title %></h3>
 
            <div class="card listing-card">
-                <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_img">
+                <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_img">
 
                 <div class="card-body">
                     <p class="card-text">
@@ -108,10 +108,12 @@
     <% } %>
 
     <hr>
+   
+   
 
-    <p>All Reviews</p>
-
-    <div class="row">
+    <div class="row col-8 offset-2">
+        <h5>All Reviews</h5>
+        
         <% for(review of listing.reviews) { %>
 
             <div class="card col-5 ms-3 mb-3">
@@ -143,5 +145,36 @@
             </div>
 
         <% } %>
+        
     </div>
+    <hr>
+     <% if(listing.geometry && Array.isArray(listing.geometry.coordinates) && listing.geometry.coordinates.length) { %>
+<div class="row">
+    <div class="col-8 offset-2 mb-4">
+        <h5>Where you'll be</h5>
+        <div id="map" style="height: 350px; width: 100%; border-radius: 12px;"></div>
+
+        <script>
+            const coords = <%- JSON.stringify(listing.geometry.coordinates) %>;
+            const popupText = <%- JSON.stringify(listing.title + '<br>' + listing.location + ', ' + listing.country) %>;
+            const map = L.map('map').setView([coords[1], coords[0]], 10);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                
+            }).addTo(map);
+
+            L.marker([coords[1], coords[0]])
+                .addTo(map)
+                .bindPopup(popupText)
+                .openPopup();
+        </script>
+    </div>
+</div>
+<% } else { %>
+<div class="row">
+    <div class="col-8 offset-2 mb-4">
+        <div class="alert alert-info">Map data is not available for this listing.</div>
+    </div>
+</div>
+<% } %>
 </div>
