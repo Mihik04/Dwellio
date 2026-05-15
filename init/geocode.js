@@ -1,11 +1,12 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const axios = require("axios");
 const Listing = require("../models/listing");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust"; // change if using Atlas
+const dbUrl=process.env.ATLASDB_URL; // change if using Atlas
 
 async function migrate() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbUrl);
     console.log("Connected to DB");
 
 
