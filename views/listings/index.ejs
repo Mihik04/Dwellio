@@ -120,7 +120,13 @@
         </div>
     </div>
 </div>
-
+<% if(locals.searchQuery) { %>
+<div class="col-12 mt-3">
+  <p class="text-muted">Showing results for: <b><%= searchQuery %></b>
+    <a href="/listings" class="ms-2 text-danger" style="font-size:0.85rem;">Clear</a>
+  </p>
+</div>
+<% } %>
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
     <% for(let listing of allListings) { %>
         <a href="/listings/<%= listing._id %>" class="listing-link">
@@ -150,4 +156,13 @@
             }
         }
     });
+      const params = new URLSearchParams(window.location.search);
+  const activeCategory = params.get("category");
+  if (activeCategory) {
+    document.querySelectorAll(".filter").forEach(f => {
+      if (f.textContent.trim() === activeCategory) {
+        f.classList.add("active");
+      }
+    });
+  }
 </script>

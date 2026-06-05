@@ -1,9 +1,26 @@
 const Listing=require("../models/listing");
 const axios = require("axios");
 
-module.exports.index=async (req,res)=>{
-    const allListings=await Listing.find({});
-       res.render("listings/index",{allListings});
+module.exports.index = async (req, res) => {
+    const { search, category } = req.query;
+    let filter = {};
+
+    if (search && search.trim() !== "") {
+        filter.$or = [
+            { title:    { $regex: search, $options: "i" } },
+            { location: { $regex: search, $options: "i" } },
+            { country:  { $regex: search, $options: "i" } },
+        ];
+    } else if (category) {
+        filter.category = category;
+    }
+
+    const allListings = await Listing.find(filter);
+    res.render("listings/index.ejs", { 
+        allListings, 
+        searchQuery: search || "",
+        activeCategory: category || ""
+    });
 };
 
 module.exports.renderNewForm = (req,res)=>{
